@@ -4,23 +4,13 @@
 function TotalOrder (){
   this.createdPizzas=[]
   this.orderId=0 // might not be needed - could be good if someone orders more than one things to track the price of each thing ordered
-  this.totalPrice;///put in price function here?
+  this.totalPrice=0///put in price function here?
 }
 
 TotalOrder.prototype.AddCreatedPizza = function (createdPizza){
   createdPizza.id=this.assignId();
   this.createdPizzas.push(createdPizza);
-  this.totalPrice +=createdPizza.price;
-}
-
-TotalOrder.prototype.CalculateTotalPrice=function(createdPizza){
-  if(this.totalPrice.length>=0){
-    for(let i=0; i<=this.totalPrice.length; i++)
-    createdPizza.totalprice=
-    totalPrice+=this.totalPrice[i];
-    return this.totalPricetotalPrice;
-  }
-  //this.totalPrice.push(totalPrice);
+  this.totalPrice+=createdPizza.price;
 }
 
 TotalOrder.prototype.assignId= function () {
@@ -32,49 +22,46 @@ TotalOrder.prototype.assignId= function () {
 function CreatedPizza(size){
   this.toppings=[];  //length of array can be measured to determine price if each topping cost $1.50
   this.size=size; 
-  this.price=[];
+  this.price;
 }
 
 CreatedPizza.prototype.AddToppings=function(toppings){
   this.toppings.push(toppings);
 }
- 
-CreatedPizza.prototype.PriceCalculationPerPizza=function() {
-  let Price=7;
+
+CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
+  this.price=7;
   if(this.toppings.length >=1){
     for (let i= 0; i<this.toppings.length; i++){
-      Price+=1;
+      this.price+=1;
     }
   }if (this.size === "small"){
-    Price+=0;
+    this.price+=0;
   }else if(this.size === "medium"){
-    Price +=2;
+    this.price +=2;
   }else if(this.size === "large"){
-    Price +=4; 
+    this.price +=4; 
   }
-  console.log(Price);
-  return Price;
+  console.log(this.price);
+  return this.price;
 }
 
-CreatedPizza.prototype.PushPricePerPizza=function(Price){
-  this.price.push(Price);
-}
 
 let pizza1 = new CreatedPizza ( "small" )
 pizza1.AddToppings("Basil");
 pizza1.AddToppings("f");
 pizza1.AddToppings("d");
-let pricePizza1=pizza1.PriceCalculationPerPizza();
-pizza1.PushPricePerPizza(pricePizza1);
  
 let pizza2 = new CreatedPizza ("medium")
 pizza2.AddToppings("Cheese")
+pizza2.PriceCalculationPerPizza();
 
-pizza1.PriceCalculationPerPizza(pizza1);
+pizza1.PriceCalculationPerPizza();
 
 let order1 = new TotalOrder ();
 order1.AddCreatedPizza(pizza1);
 order1.AddCreatedPizza(pizza2);
 console.log(pizza1);
+console.log(pizza2);
 console.log(order1);
 //User Interface Logic
