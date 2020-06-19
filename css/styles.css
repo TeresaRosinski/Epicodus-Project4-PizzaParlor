@@ -1,0 +1,49 @@
+body, html {
+  height: 100%; 
+  background-color: #f1f1f1; 
+}
+.hero-image {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../pizza.jpg");
+  height: 100%;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text{
+  text-align: center; 
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+  border: 5px solid white;
+  padding: 80px 50px;
+  display:inline-block;
+}
+
+.hero-image h1 {
+  font: size 72px;
+  letter-spacing:0.2em;
+  font: white; 
+  text-align: center;
+  margin-top: 6%;
+  }
+
+.hero-image h4 {
+  font: size 72px;
+  letter-spacing:0.2em;
+  font: white; 
+  text-align: center;
+  margin-top: 6%;
+  }
+
+.hero-image .btn {
+  font-size: large;
+  margin: 10px; 
+  background-color: white;
+  color:rgb(32, 32, 32); 
+  font: verdana; 
+}
+

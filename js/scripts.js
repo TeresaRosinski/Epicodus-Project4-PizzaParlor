@@ -3,8 +3,8 @@
 //Constructor function to hold to complete order a user creates
 function TotalOrder (){
   this.createdPizzas=[]
-  this.orderId=0 // might not be needed - could be good if someone orders more than one things to track the price of each thing ordered
-  this.totalPrice=0///put in price function here?
+  this.pizzaId=0 
+  this.totalPrice=0
 }
 
 TotalOrder.prototype.AddCreatedPizza = function (createdPizza){
@@ -14,13 +14,13 @@ TotalOrder.prototype.AddCreatedPizza = function (createdPizza){
 }
 
 TotalOrder.prototype.assignId= function () {
-  this.orderId +=1;
-  return this.orderId;
+  this.pizzaId +=1;
+  return this.pizzaId;
 }
 
 //Constructor function to hold each pizza a user creates
 function CreatedPizza(size){
-  this.toppings=[];  //length of array can be measured to determine price if each topping cost $1.50
+  this.toppings=[];  
   this.size=size; 
   this.price;
 }
@@ -46,22 +46,19 @@ CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
   return this.price;
 }
 
-
 let pizza1 = new CreatedPizza ( "small" )
 pizza1.AddToppings("Basil");
 pizza1.AddToppings("f");
 pizza1.AddToppings("d");
- 
 let pizza2 = new CreatedPizza ("medium")
 pizza2.AddToppings("Cheese")
 pizza2.PriceCalculationPerPizza();
-
 pizza1.PriceCalculationPerPizza();
-
 let order1 = new TotalOrder ();
 order1.AddCreatedPizza(pizza1);
 order1.AddCreatedPizza(pizza2);
 console.log(pizza1);
 console.log(pizza2);
 console.log(order1);
+
 //User Interface Logic
