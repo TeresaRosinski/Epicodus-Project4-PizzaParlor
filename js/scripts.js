@@ -7,9 +7,14 @@ function TotalOrder (){
   this.price=[]///put in price function here?
 }
 
-TotalOrder.prototype.addCreatedPizza = function (createdPizza){
+TotalOrder.prototype.AddCreatedPizza = function (createdPizza){
   createdPizza.id = this.assignId();
   this.createdPizzas.push(createdPizza);
+}
+
+TotalOrder.prototype.assignId= function () {
+  this.orderId +=1;
+  return this.orderId;
 }
 
 //Constructor function to hold each pizza a user creates
@@ -22,7 +27,12 @@ CreatedPizza.prototype.AddToppings = function (toppings){
   this.toppings.push(toppings);
 }
 
+ 
 let pizza1 = new CreatedPizza ( "small" )
 pizza1.AddToppings("Basil Pepperoni Olives");
+
+let order1 = new TotalOrder ();
+order1.AddCreatedPizza(pizza1);
 console.log(pizza1);
+console.log(order1);
 //User Interface Logic
