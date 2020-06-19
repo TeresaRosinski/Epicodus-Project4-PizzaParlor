@@ -1,8 +1,8 @@
-# _[Pig Dice]()_
+# _[Pizza Parlor]()_
 
 #### Epicodus:: Week Four:: Pizza Project:: 06.19.2020
 
-#### By _** Teresa Rosinski**_
+#### By _ Teresa Rosinski _
 
 ---
 
@@ -14,12 +14,12 @@
 
 ## Setup/Installation Requirements
 
-Clone my github repository from your computer's Terminal (make sure you are on your Desktop)
-
-* cd desktop
-* git clone (put link here)
-
-Open folder and drag/drop the index.html file into your preferred web browser
+1. Clone this repository onto your computer:
+`$ git clone https://github.com/TeresaRosinski/Epicodus-Project4-PizzaParlor.git`
+2. Navigate into the `Epicods-Project4-PizzaParlor` directory in Visual Studio Code or preferred text editor
+`$ code .`
+3. Open index.html in Chrome or preferred browser:
+`$ open index.html`
 
 ---
 
