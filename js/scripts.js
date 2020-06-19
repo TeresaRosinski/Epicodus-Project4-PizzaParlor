@@ -4,12 +4,23 @@
 function TotalOrder (){
   this.createdPizzas=[]
   this.orderId=0 // might not be needed - could be good if someone orders more than one things to track the price of each thing ordered
-  this.price=[]///put in price function here?
+  this.totalPrice;///put in price function here?
 }
 
 TotalOrder.prototype.AddCreatedPizza = function (createdPizza){
-  createdPizza.id = this.assignId();
+  createdPizza.id=this.assignId();
   this.createdPizzas.push(createdPizza);
+  this.totalPrice +=createdPizza.price;
+}
+
+TotalOrder.prototype.CalculateTotalPrice=function(createdPizza){
+  if(this.totalPrice.length>=0){
+    for(let i=0; i<=this.totalPrice.length; i++)
+    createdPizza.totalprice=
+    totalPrice+=this.totalPrice[i];
+    return this.totalPricetotalPrice;
+  }
+  //this.totalPrice.push(totalPrice);
 }
 
 TotalOrder.prototype.assignId= function () {
@@ -30,7 +41,6 @@ CreatedPizza.prototype.AddToppings=function(toppings){
  
 CreatedPizza.prototype.PriceCalculationPerPizza=function() {
   let Price=7;
-  debugger; 
   if(this.toppings.length >=1){
     for (let i= 0; i<this.toppings.length; i++){
       Price+=1;
