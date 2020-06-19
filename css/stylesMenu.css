@@ -3,7 +3,7 @@ body, html {
   background-color: #f1f1f1; 
 }
 .hero-image {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../pizza.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/pizza.jpg");
   height: 35%;
   background-position: center; 
   background-repeat: no-repeat;
@@ -40,11 +40,13 @@ body, html {
 
 .selectSize{
   text-align: center;
+  padding:5px;
+  
 }
 .selectSize .small img {
   text-align: center;
-  width:50%;
-  height:50%;
+  width:60%;
+  height:60%;
 }
 .selectSize .medium img {
   text-align: center;
@@ -55,4 +57,16 @@ body, html {
   text-align: center;
   width:55%;
   height:55%;
+}
+
+.formatToppings{
+  font-size: 20px;
+}
+
+#sizeAndToppings .btn {
+  font-size: large;
+  margin: 10px; 
+  background-color: white;
+  color:rgb(32, 32, 32); 
+  font: verdana; 
 }
