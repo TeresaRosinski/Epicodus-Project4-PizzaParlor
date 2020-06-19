@@ -37,8 +37,22 @@ body, html {
   text-align: center;
   margin-top: 6%;
   }
-.selectSize img {
+
+.selectSize{
+  text-align: center;
+}
+.selectSize .small img {
+  text-align: center;
   width:50%;
   height:50%;
 }
-
+.selectSize .medium img {
+  text-align: center;
+  width:55%;
+  height:55%;
+}
+.selectSize .large img {
+  text-align: center;
+  width:55%;
+  height:55%;
+}
