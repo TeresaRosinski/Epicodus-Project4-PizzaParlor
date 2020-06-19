@@ -47,9 +47,7 @@ CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
 }
 
 let pizza1 = new CreatedPizza ( "small" )
-pizza1.AddToppings("Basil");
-pizza1.AddToppings("f");
-pizza1.AddToppings("d");
+
 let pizza2 = new CreatedPizza ("medium")
 pizza2.AddToppings("Cheese")
 pizza2.PriceCalculationPerPizza();
@@ -72,3 +70,9 @@ function displayOrderDetails(orderToDispaly){
   });
   orderDetails.html(htmlForORderDetails);
 };
+
+function showPizza(pizzaId)
+
+$(document).ready(function(){
+  $("form#sizeAndToppings").submit
+});
