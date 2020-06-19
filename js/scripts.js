@@ -71,8 +71,32 @@ function displayOrderDetails(orderToDispaly){
   orderDetails.html(htmlForORderDetails);
 };
 
-function showPizza(pizzaId)
+function showTopping(){
 
-$(document).ready(function(){
-  $("form#sizeAndToppings").submit
-});
+}
+
+function attachToppingsListeners(){
+  $("#formatToppings").on("click", ".btn#basilToppingAdd", function(){
+    $("#showToppings").text("Basil");
+  })
+}
+
+$(document).ready(function(){ 
+  attachToppingsListeners();
+  $("form#sizeAndToppings").submit(function(event){
+    event.preventDefault();
+    const pizzaSize=$('input:radio[name=size]:checked').val();
+    let toppingsToAdd=[];
+    /*
+      $("input[name='toppings']:checked").forEach(function(){
+      toppingsToAdd.push(this).val();
+      console.log(toppingsToAdd);
+      */
+    console.log(pizzaSize);
+    });
+    
+    
+  
+  //});
+  });
+
