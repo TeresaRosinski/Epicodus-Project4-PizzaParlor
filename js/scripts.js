@@ -62,3 +62,13 @@ console.log(pizza2);
 console.log(order1);
 
 //User Interface Logic
+
+
+function displayOrderDetails(orderToDispaly){
+  let orderDetails=$("#orderSummary");
+  let htmlForOrderDetails="";
+  orderToDisplay.createdPizzas.forEach(function(createdPizza){
+    orderToDisplay+="<li id= "+createdPizza.pizzaId+">"+createdPizza.size + "" + createdPizza.toppings + createdPizza.price + "</li>"
+  });
+  orderDetails.html(htmlForORderDetails);
+};
