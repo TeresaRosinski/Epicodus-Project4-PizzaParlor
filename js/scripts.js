@@ -86,13 +86,15 @@ $(document).ready(function(){
   $("form#sizeAndToppings").submit(function(event){
     event.preventDefault();
     const pizzaSize=$('input:radio[name=size]:checked').val();
-    let toppingsToAdd=[];
-    /*
-      $("input[name='toppings']:checked").forEach(function(){
-      toppingsToAdd.push(this).val();
-      console.log(toppingsToAdd);
-      */
+    const topping1=$('input:radio[name=firstTopping]:checked').val();
+    const topping2=$('input:radio[name=topping2]:checked').val();
+    const topping3=$('input:radio[name=topping3]:checked').val();
+
+    
     console.log(pizzaSize);
+    console.log(topping1);
+    console.log(topping2);
+    console.log(topping3);
     });
     
     

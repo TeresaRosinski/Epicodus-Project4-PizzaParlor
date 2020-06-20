@@ -1,0 +1,22 @@
+ <input type="checkbox" name="toppings" value="Basil"> Basil<br>
+            <button type="submit" class="btn" id="basilToppingAdd">Add</button>
+            <button type="submit" class="btn" id="basilToppingremove">Remove</button><br>
+            <input type="checkbox" name="toppings" value="Olives"> Olives<br>
+            <button type="submit" class="btn" id="oliveToppingAdd">Add</button>
+            <button type="submit" class="btn" id="oliveToppingRemove">Remove</button><br>
+            <input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni<br>
+            <button type="submit" class="btn" id="pepperoniToppingAdd">Add</button>
+            <button type="submit" class="btn" id="pepperoniToppingRemove">Remove</button><br>
+            <input type="checkbox" name="toppings" value="Mushrooms"> Mushrooms<br>
+            <button type="submit" class="btn" id="mushroomToppingAdd">Add</button>
+            <button type="submit" class="btn" id="mushroomToppingRemove">Remove</button><br>
+            <input type="checkbox" name="toppings" value="Garlic"> Garlic<br>
+            <button type="submit" class="btn" id="garlicToppingAdd">Add</button>
+            <button type="submit" class="btn" id="garlicToppingRemove">Remove</button><br>
+
+
+        jquery   
+      $("input[name='toppings']:checked").forEach(function(){
+      toppingsToAdd.push(this).val();
+      console.log(toppingsToAdd);
+      
