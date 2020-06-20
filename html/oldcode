@@ -14,9 +14,32 @@
             <button type="submit" class="btn" id="garlicToppingAdd">Add</button>
             <button type="submit" class="btn" id="garlicToppingRemove">Remove</button><br>
 
-
-        jquery   
+            
       $("input[name='toppings']:checked").forEach(function(){
       toppingsToAdd.push(this).val();
       console.log(toppingsToAdd);
       
+
+            <h4>Topping #1</h4>
+              <input type="radio" name="firstTopping" value="basil">Basil<br>
+              <input type="radio" name="firstTopping" value="garlic">Garlic<br>
+              <input type="radio" name="firstTopping" value="peppers">Peppers<br>
+              <input type="radio" name="firstTopping" value="olives">Olives<br>
+              <input type="radio" name="firstTopping" value="spinach">Spinach<br>
+            </div> 
+            <div class="form-group">
+            <h4>Topping #2</h4>
+              <input type="radio" name="topping2" value="basil">Basil<br>
+              <input type="radio" name="topping2" value="garlic">Garlic<br>
+              <input type="radio" name="topping2" value="peppers">Peppers<br>
+              <input type="radio" name="topping2" value="olives">Olives<br>
+              <input type="radio" name="topping2" value="spinach">Spinach<br>
+            </div>
+            <div class="form-group">
+              <h4>Topping #3</h4>
+                <input type="radio" name="topping3" value="basil">Basil<br>
+                <input type="radio" name="topping3" value="garlic">Garlic<br>
+                <input type="radio" name="topping3" value="peppers">Peppers<br>
+                <input type="radio" name="topping3" value="olives">Olives<br>
+                <input type="radio" name="topping3" value="spinach">Spinach<br>
+              </div>                

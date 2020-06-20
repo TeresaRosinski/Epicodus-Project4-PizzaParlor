@@ -35,11 +35,11 @@ CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
     for (let i= 0; i<this.toppings.length; i++){
       this.price+=1;
     }
-  }if (this.size === "small"){
+  }if (this.size === "Small"){
     this.price+=0;
-  }else if(this.size === "medium"){
+  }else if(this.size === "Medium"){
     this.price +=2;
-  }else if(this.size === "large"){
+  }else if(this.size === "Large"){
     this.price +=4; 
   }
   console.log(this.price);
@@ -85,20 +85,33 @@ $(document).ready(function(){
   attachToppingsListeners();
   $("form#sizeAndToppings").submit(function(event){
     event.preventDefault();
-    const pizzaSize=$('input:radio[name=size]:checked').val();
-    const topping1=$('input:radio[name=firstTopping]:checked').val();
-    const topping2=$('input:radio[name=topping2]:checked').val();
-    const topping3=$('input:radio[name=topping3]:checked').val();
-
+    let pizzaSize=$('input:radio[name=size]:checked').val();
+    let pizzaToppings=[];
+    $("input[name='toppings[]']:checked").each(function(){
+      pizzaToppings.push($(this).val());
+    });
     
-    console.log(pizzaSize);
-    console.log(topping1);
-    console.log(topping2);
-    console.log(topping3);
+    
+    //const topping1=$('input:radio[name=firstTopping]:checked').val();
+    //const topping2=$('input:radio[name=topping2]:checked').val();
+    //const topping3=$('input:radio[name=topping3]:checked').val();
+
+    let orderOne = new TotalOrder()
+    let pizzaUno = new CreatedPizza (pizzaSize);
+    //pizzaUno.AddToppings(topping1);
+    //pizzaUno.AddToppings(topping2);
+    //pizzaUno.AddToppings(topping3);
+    //pizzaUno.PriceCalculationPerPizza();
+    //orderOne.AddCreatedPizza(pizzaUno);
+    console.log(pizzaToppings);
+    console.log(orderOne);
+    //displayOrderDetails(orderOne);
+    
+      });
     });
     
     
   
   //});
-  });
+  //});
 
