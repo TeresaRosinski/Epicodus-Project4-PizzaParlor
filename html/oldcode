@@ -43,3 +43,7 @@
                 <input type="radio" name="topping3" value="olives">Olives<br>
                 <input type="radio" name="topping3" value="spinach">Spinach<br>
               </div>                
+
+              //const topping1=$('input:radio[name=firstTopping]:checked').val();
+    //const topping2=$('input:radio[name=topping2]:checked').val();
+    //const topping3=$('input:radio[name=topping3]:checked').val();

@@ -36,38 +36,27 @@
               <img src="../images/cp.png" alt="picture of a cheese pizza"><br>
               <input type="radio" name="size" value="Large"><br>
             </div>
-          </div>
-      </div>
+          </div>    
       <div class="container row">
         <div class="col-md-6">
           <h3>Select your Toppings</h3>
           <div class="form-group">
             <input type="checkbox" name="toppings[]" value="Basil"> Basil<br>
-            <button type="submit" class="btn" id="basilToppingAdd">Add</button>
-            <button type="submit" class="btn" id="basilToppingremove">Remove</button><br>
-            <input type="checkbox" name="toppings[]" value="Olives"> Olives<br>
-            <button type="submit" class="btn" id="oliveToppingAdd">Add</button>
-            <button type="submit" class="btn" id="oliveToppingRemove">Remove</button><br>
-            <input type="checkbox" name="toppings[]" value="Pepperoni"> Pepperoni<br>
-            <button type="submit" class="btn" id="pepperoniToppingAdd">Add</button>
-            <button type="submit" class="btn" id="pepperoniToppingRemove">Remove</button><br>
-            <input type="checkbox" name="toppings[]" value="Mushrooms"> Mushrooms<br>
-            <button type="submit" class="btn" id="mushroomToppingAdd">Add</button>
-            <button type="submit" class="btn" id="mushroomToppingRemove">Remove</button><br>
-            <input type="checkbox" name="toppings[]" value="Garlic"> Garlic<br>
-            <button type="submit" class="btn" id="garlicToppingAdd">Add</button>
-            <button type="submit" class="btn" id="garlicToppingRemove">Remove</button><br>
-
+            <input type="checkbox" name="toppings[]" value="Olives"> Olives<br>          
+            <input type="checkbox" name="toppings[]" value="Pepperoni"> Pepperoni<br>          
+            <input type="checkbox" name="toppings[]" value="Mushrooms"> Mushrooms<br>          
+            <input type="checkbox" name="toppings[]" value="Garlic"> Garlic<br> 
+          </div>         
           <button type="submit" class="btn large">Make My Pizza</button>
-        </form>
-      </div>
-      <div class="col-md-6 orderSummary">
+        </div>      
+    </form>   
+      <div class="col-md-6">
         <h3>Current Order:</h3>
-        <ul id="showtoppings">
+        <ul id="orderSummary">
         </ul>
-        <h5 id="orderPrice"></h5>       
-      </div>
-  </div>
+        <h5 id="orderPrice"></h5>
+      </div>       
+    </div>
   </div>
 </body>
 </html>

@@ -27,6 +27,7 @@ function CreatedPizza(size){
 
 CreatedPizza.prototype.AddToppings=function(toppings){
   this.toppings.push(toppings);
+
 }
 
 CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
@@ -46,43 +47,23 @@ CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
   return this.price;
 }
 
-let pizza1 = new CreatedPizza ( "small" )
-
-let pizza2 = new CreatedPizza ("medium")
-pizza2.AddToppings("Cheese")
-pizza2.PriceCalculationPerPizza();
-pizza1.PriceCalculationPerPizza();
-let order1 = new TotalOrder ();
-order1.AddCreatedPizza(pizza1);
-order1.AddCreatedPizza(pizza2);
-console.log(pizza1);
-console.log(pizza2);
-console.log(order1);
-
 //User Interface Logic
 
-
-function displayOrderDetails(orderToDispaly){
+function displayOrderDetails(totalOrder){
+  
   let orderDetails=$("#orderSummary");
-  let htmlForOrderDetails="";
-  orderToDisplay.createdPizzas.forEach(function(createdPizza){
-    orderToDisplay+="<li id= "+createdPizza.pizzaId+">"+createdPizza.size + "" + createdPizza.toppings + createdPizza.price + "</li>"
+  let htmlForOrderDetails=" ";
+  htmlForOrderDetails+=totalOrder.createdPizzas.forEach(function(createdPizza){
+    "<li id= "+createdPizza.pizzaId+">"+createdPizza.size + "" + createdPizza.toppings+ createdPizza.price + "</li>"
+    console.log(htmlForOrderDetails);
+    orderDetails.html(htmlForOrderDetails);
   });
-  orderDetails.html(htmlForORderDetails);
-};
+  };
+ 
 
-function showTopping(){
 
-}
-
-function attachToppingsListeners(){
-  $("#formatToppings").on("click", ".btn#basilToppingAdd", function(){
-    $("#showToppings").text("Basil");
-  })
-}
 
 $(document).ready(function(){ 
-  attachToppingsListeners();
   $("form#sizeAndToppings").submit(function(event){
     event.preventDefault();
     let pizzaSize=$('input:radio[name=size]:checked').val();
@@ -90,28 +71,18 @@ $(document).ready(function(){
     $("input[name='toppings[]']:checked").each(function(){
       pizzaToppings.push($(this).val());
     });
-    
-    
-    //const topping1=$('input:radio[name=firstTopping]:checked').val();
-    //const topping2=$('input:radio[name=topping2]:checked').val();
-    //const topping3=$('input:radio[name=topping3]:checked').val();
-
     let orderOne = new TotalOrder()
     let pizzaUno = new CreatedPizza (pizzaSize);
-    //pizzaUno.AddToppings(topping1);
-    //pizzaUno.AddToppings(topping2);
-    //pizzaUno.AddToppings(topping3);
-    //pizzaUno.PriceCalculationPerPizza();
-    //orderOne.AddCreatedPizza(pizzaUno);
+    pizzaUno.AddToppings(pizzaToppings);
+    pizzaUno.PriceCalculationPerPizza();
+    orderOne.AddCreatedPizza(pizzaUno)
+    displayOrderDetails(orderOne);
+    //diplay pizza
+   
     console.log(pizzaToppings);
+    console.log(pizzaUno);
     console.log(orderOne);
     //displayOrderDetails(orderOne);
-    
-      });
-    });
-    
-    
   
-  //});
-  //});
-
+  });
+});
