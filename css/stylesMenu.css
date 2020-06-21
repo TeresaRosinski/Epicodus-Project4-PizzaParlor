@@ -59,8 +59,11 @@ body, html {
   height:55%;
 }
 
-.formatToppings{
+.chooseToppings{
   font-size: 20px;
+  text-align: left;
+  margin: 10px;
+  padding: 20px;
 }
 
 #sizeAndToppings .btn {
@@ -69,4 +72,10 @@ body, html {
   background-color: white;
   color:rgb(32, 32, 32); 
   font: verdana; 
+}
+#orderSummary{
+  text-align: left;
+}
+.moveLeft{
+  text-align: left;
 }

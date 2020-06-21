@@ -71,10 +71,10 @@ CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
 //User Interface Logic
 
 function displayOrderDetails(orderToDisplay){
-  let orderDetails=$("ul#orderSummary");
+  let orderDetails=$("#orderSummary");
   let htmlForOrderDetails=" ";
   orderToDisplay.createdPizzas.forEach(function(createdPizza){
-    htmlForOrderDetails+= "<li id= "+createdPizza.pizzaId+">"+ "Pizza Size: " + createdPizza.size + "</li>" +  "<li> Toppings: " + createdPizza.toppings+ "</li>" + "<li>Price:$ " + createdPizza.price + "</li>"
+    htmlForOrderDetails+= "<p id= "+createdPizza.id+"/p>"+ "<h3>Pizza: "+createdPizza.id+ "</h3>" + "<p>Pizza Size: " + createdPizza.size + "</p>" +  "<p> Toppings: " + createdPizza.toppings+ "</p>" + "<p>Price:$ " + createdPizza.price + "</p>"
     orderDetails.html(htmlForOrderDetails);    
   });
   };
