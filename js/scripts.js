@@ -18,6 +18,29 @@ TotalOrder.prototype.assignId= function () {
   return this.pizzaId;
 }
 
+TotalOrder.prototype.findOrder = function(id) {
+  for (let i=0; i< this.createdPizzas.length; i++) {
+    if (this.createdPizzas[i]) {
+      if (this.createdPizzas[i].id == id) {
+        return this.createdPizzas[i];
+      }
+    }
+  };
+  return false;
+}
+
+TotalOrder.prototype.deletePizza = function(id) {
+  for (let i=0; i< this.createdPizzas.length; i++) {
+    if (this.createdPizzas[i]) {
+      if (this.createdPizzas[i].id == id) {
+        delete this.createdPizzas[i];
+        return true;
+      }
+    }
+  };
+  return false;
+}
+
 //Constructor function to hold each pizza a user creates
 function CreatedPizza(size){
   this.toppings=[];  
@@ -27,7 +50,6 @@ function CreatedPizza(size){
 
 CreatedPizza.prototype.AddToppings=function(toppings){
   this.toppings.push(toppings);
-
 }
 
 CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
@@ -43,35 +65,39 @@ CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
   }else if(this.size === "Large"){
     this.price +=4; 
   }
-  console.log(this.price);
   return this.price;
 }
 
 //User Interface Logic
 
-function displayOrderDetails(totalOrder){
-  
-  let orderDetails=$("#orderSummary");
+function displayOrderDetails(orderToDisplay){
+  let orderDetails=$("ul#orderSummary");
   let htmlForOrderDetails=" ";
-  htmlForOrderDetails+=totalOrder.createdPizzas.forEach(function(createdPizza){
-    "<li id= "+createdPizza.pizzaId+">"+createdPizza.size + "" + createdPizza.toppings+ createdPizza.price + "</li>"
-    console.log(htmlForOrderDetails);
-    orderDetails.html(htmlForOrderDetails);
+  orderToDisplay.createdPizzas.forEach(function(createdPizza){
+    htmlForOrderDetails+= "<li id= "+createdPizza.pizzaId+">"+ "Pizza Size: " + createdPizza.size + "</li>" +  "<li> Toppings: " + createdPizza.toppings+ "</li>" + "<li>Price:$ " + createdPizza.price + "</li>"
+    orderDetails.html(htmlForOrderDetails);    
   });
   };
  
+  function displayShit(order){
+    const orderKeys=Object.keys(order)
+    let htmldisplay = ""
+    orderKeys.forEach(function(key){
+      htmldisplay = htmldisplay.concat(key+ ":" + order[key] + "\n")
+    });
+  };
 
 
-
+let orderOne = new TotalOrder()
 $(document).ready(function(){ 
   $("form#sizeAndToppings").submit(function(event){
     event.preventDefault();
-    let pizzaSize=$('input:radio[name=size]:checked').val();
-    let pizzaToppings=[];
+    const pizzaSize=$('input:radio[name=size]:checked').val();
+    const pizzaToppings=[];
     $("input[name='toppings[]']:checked").each(function(){
       pizzaToppings.push($(this).val());
     });
-    let orderOne = new TotalOrder()
+    
     let pizzaUno = new CreatedPizza (pizzaSize);
     pizzaUno.AddToppings(pizzaToppings);
     pizzaUno.PriceCalculationPerPizza();
@@ -79,9 +105,12 @@ $(document).ready(function(){
     displayOrderDetails(orderOne);
     //diplay pizza
    
+    
     console.log(pizzaToppings);
     console.log(pizzaUno);
     console.log(orderOne);
+    console.log(displayOrderDetails(orderOne));
+    console.log(displayShit(orderOne));
     //displayOrderDetails(orderOne);
   
   });
