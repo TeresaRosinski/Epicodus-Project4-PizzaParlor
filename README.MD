@@ -2,7 +2,7 @@
 
 #### Epicodus:: Week Four:: Pizza Project:: 06.19.2020
 
-#### By _ Teresa Rosinski _
+#### By Teresa Rosinski 
 
 ---
 

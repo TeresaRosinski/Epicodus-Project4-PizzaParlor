@@ -84,6 +84,7 @@ function displayOrderDetails(orderToDisplay){
   };
  
 //Function to display each completed pizza to the page
+
 let orderOne = new TotalOrder()
 $(document).ready(function(){ 
   $("form#sizeAndToppings").submit(function(event){
