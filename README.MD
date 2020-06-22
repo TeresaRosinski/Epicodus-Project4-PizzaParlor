@@ -25,6 +25,8 @@ Open via Bash/GitBash:
 3. Open index.html in Chrome or preferred browser:
 `$ open index.html`
 
+##### If you'd like to view the project in your browser,click here: https://teresarosinski.github.io/Epicodus-Project4-PizzaParlor/
+
 ---
 
 ## Specifications
