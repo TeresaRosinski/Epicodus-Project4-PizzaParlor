@@ -46,20 +46,19 @@ TotalOrder.prototype.deletePizza = function(id) {
 
 //Constructor function to hold each pizza a user creates
 function CreatedPizza(size,toppings){
-  this.toppings=[];  
-  this.size=size; 
-  this.price=7;
+  this.toppings = [];  
+  this.size = size; 
+  this.price = 7;
 }
 
 //prototype to add an array of toppings into the created pizza
-CreatedPizza.prototype.AddToppings=function(toppings){
+CreatedPizza.prototype.AddToppings = function(toppings){
   this.toppings.push(toppings);
 }
 
 //prototype to determine the price of each pizza
 CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
-  this.price=7;
-  if(this.toppings.length >=1){
+  if(this.toppings.length >= 1){
     for (let i= 0; i<this.toppings.length; i++){
       this.price+=1;
     }
@@ -74,6 +73,8 @@ CreatedPizza.prototype.PriceCalculationPerPizza=function(createdPizza) {
 }
 
 //User Interface Logic
+
+//Function to display each completed pizza to the page
 function displayOrderDetails(orderToDisplay){
   let orderDetails=$("#orderSummary");
   let htmlForOrderDetails=" ";
@@ -81,9 +82,7 @@ function displayOrderDetails(orderToDisplay){
     htmlForOrderDetails+= "<p id= "+createdPizza.id+"/p>"+ "<h3>Pizza: "+createdPizza.id+ "</h3>" + "<p>Pizza Size: " + createdPizza.size + "</p>" +  "<p> Toppings: " + createdPizza.toppings+ "</p>" + "<p>Price:$ " + createdPizza.price + "</p>"
     orderDetails.html(htmlForOrderDetails);    
   });
-  };
- 
-//Function to display each completed pizza to the page
+  }
 
 let orderOne = new TotalOrder()
 $(document).ready(function(){ 
