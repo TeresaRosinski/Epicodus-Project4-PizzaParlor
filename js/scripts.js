@@ -78,15 +78,6 @@ function displayOrderDetails(orderToDisplay){
     orderDetails.html(htmlForOrderDetails);    
   });
   };
- 
-  function displayShit(order){
-    const orderKeys=Object.keys(order)
-    let htmldisplay = ""
-    orderKeys.forEach(function(key){
-      htmldisplay = htmldisplay.concat(key+ ":" + order[key] + "\n")
-    });
-  };
-
 
 let orderOne = new TotalOrder()
 $(document).ready(function(){ 
@@ -103,15 +94,5 @@ $(document).ready(function(){
     pizzaUno.PriceCalculationPerPizza();
     orderOne.AddCreatedPizza(pizzaUno)
     displayOrderDetails(orderOne);
-    //diplay pizza
-   
-    
-    console.log(pizzaToppings);
-    console.log(pizzaUno);
-    console.log(orderOne);
-    console.log(displayOrderDetails(orderOne));
-    console.log(displayShit(orderOne));
-    //displayOrderDetails(orderOne);
-  
   });
 });
