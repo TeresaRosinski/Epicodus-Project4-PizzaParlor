@@ -45,10 +45,10 @@ TotalOrder.prototype.deletePizza = function(id) {
 }
 
 //Constructor function to hold each pizza a user creates
-function CreatedPizza(size){
+function CreatedPizza(size,toppings){
   this.toppings=[];  
   this.size=size; 
-  this.price;
+  this.price=7;
 }
 
 //prototype to add an array of toppings into the created pizza
